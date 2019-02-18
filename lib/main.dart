@@ -1,9 +1,4 @@
-/*
-Nguyen Duc Hoang(Mr)
-Programming tutorial channel:
-https://www.youtube.com/c/nguyenduchoang
-Flutter, React, React Native, IOS development, Swift, Python, Angular
-* */
+
 import 'package:flutter/material.dart';
 import 'package:english_words/english_words.dart';
 
