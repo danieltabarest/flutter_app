@@ -24,16 +24,16 @@ class ContactsListPage extends StatelessWidget  {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(title: Icon(Icons.home)),
-      body: _buildList(),
+      body: _buildList(context),
     );
   }
 
-  Widget _buildList() {
+  Widget _buildList(context) {
     return ListView.builder(
       itemCount: allContacts.length,
       itemBuilder: (content, index) {
         Contact contact = allContacts[index];
-        return ContactListTile(contact);
+        return ContactListTile(contact,context);
       },
     );
   }
@@ -41,10 +41,31 @@ class ContactsListPage extends StatelessWidget  {
 
 
 class ContactListTile extends ListTile {
-  ContactListTile(Contact contact) : super(
+  ContactListTile(Contact contact, context) : super(
+    onLongPress:(){
+      Navigator.push(context,MaterialPageRoute(builder: (context) => SecondRoute()),);
+    },
     title: Text(contact.name),
     subtitle: Text(contact.email),
     leading: CircleAvatar(child: Text(contact.name[0])),
   );
 }
 
+class SecondRoute extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text("Second Route"),
+      ),
+      body: Center(
+        child: RaisedButton(
+          onPressed: () {
+            Navigator.pop(context);
+          },
+          child: Text('Go back!'),
+        ),
+      ),
+    );
+  }
+}
