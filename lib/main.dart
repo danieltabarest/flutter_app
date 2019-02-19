@@ -1,5 +1,6 @@
 import 'package:flutter_app/contacts_list_page.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_app/testing.dart';
 
 void main() => runApp(MyApp());
 

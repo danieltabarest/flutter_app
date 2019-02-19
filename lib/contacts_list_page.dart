@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 
-
 class Contact {
   Contact({name, email});
    String name;
@@ -43,7 +42,8 @@ class ContactsListPage extends StatelessWidget  {
 class ContactListTile extends ListTile {
   ContactListTile(Contact contact, context) : super(
     onLongPress:(){
-      Navigator.push(context,MaterialPageRoute(builder: (context) => SecondRoute()),);
+      Navigator.push(context,
+        MaterialPageRoute(builder: (context) => SecondRoute()),);
     },
     title: Text(contact.name),
     subtitle: Text(contact.email),
